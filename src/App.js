@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import { useChangeTheme } from './useChangeTheme';
 
 function App() {
+  const [theme, changeTheme] = useChangeTheme()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App container ${theme} vh-100 mt-5 mb-5`}  >
+      <div className="user-select-none" onClick={changeTheme}>change theme</div>
     </div>
   );
 }
